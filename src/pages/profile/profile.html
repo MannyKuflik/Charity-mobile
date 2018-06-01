@@ -1,0 +1,18 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Welcome!</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <p>
+    Welcome back {{user.email}}, your super secret password is: {{user.password}}
+  </p>
+  <ion-list>
+    <button ion-button full (click)="navToPortfolio()">Conservation Portfolio</button>
+    <button ion-button full (click)="navToCharityList()">Conservation Charities</button>
+  </ion-list>
+</ion-content>

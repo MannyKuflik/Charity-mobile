@@ -1,0 +1,50 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Donations Page</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <p>Thank you so much for considering donating. Please fill out the information panels below and press "Submit Donation"
+        when completed.</p>
+
+    <ion-list>
+
+        <ion-item>
+            <ion-label fixed>Full Name</ion-label>
+            <ion-input type="text" value=""></ion-input>
+        </ion-item>
+
+        <ion-item>
+                <ion-label fixed>Amount</ion-label>
+                <ion-input type="text" value=""></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label fixed> Card Number</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label fixed>Exp (Mo/Yr)</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label fixed>Security Code</ion-label>
+            <ion-input type="text" value=""></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label fixed>Monthly? (yes/no)</ion-label>
+            <ion-input type="text" value=""></ion-input>
+        </ion-item>
+
+    </ion-list>
+    <button ion-button full (click)="addDonation()">Submit Donation</button>
+
+</ion-content>

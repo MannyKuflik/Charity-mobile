@@ -1,0 +1,18 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Charity List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+    <button full ion-item *ngFor="let charity of charities" (click)="navigateToCharity(charity)">{{charity.name}}</button>
+
+  </ion-list>
+
+</ion-content>
