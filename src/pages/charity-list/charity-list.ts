@@ -25,8 +25,15 @@ export class CharityListPage {
     charity2.description = "Save the dogs!";
     charity2.link="www.savethedogs.com";
 
+    var charity3 = new Charity();
+    charity2.id = 3;
+    charity2.name = "Elephant Poaching";
+    charity2.description = "Save the elephants!";
+    charity2.link="www.savetheelephants.com";
+
     this.charities.push(charity1);
     this.charities.push(charity2);
+    this.charities.push(charity3);
   }
 
   ionViewDidLoad() {

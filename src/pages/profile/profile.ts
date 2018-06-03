@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { User } from '../../models/user';
 import { CharityListPage } from '../charity-list/charity-list';
 import { PortfolioPage } from '../portfolio/portfolio';
+import { DonationsPage } from '../donations/donations';
 
 @Component({
   selector: 'page-profile',
