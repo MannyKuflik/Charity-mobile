@@ -18,9 +18,9 @@ export class ProfilePage {
   }
 
   ionViewDidLoad() {
-    this.user.firstname = "Connor";
-    this.user.lastname = "Haynes";
-    this.user.email = this.navParams.get("username");
+    this.user.firstname = this.navParams.get('firstname');
+    this.user.lastname = this.navParams.get('lastname');
+    this.user.email = this.navParams.get("email");
     this.user.password = this.navParams.get("password");
   }
 
