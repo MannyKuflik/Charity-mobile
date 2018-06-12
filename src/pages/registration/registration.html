@@ -1,18 +1,50 @@
 <ion-header>
 
-    <ion-navbar>
-      <ion-title>Register</ion-title>
-    </ion-navbar>
-  
-  </ion-header>
-  
-  
-  <ion-content padding>
-      <img src="https://blog.thevalley.bolton.sch.uk/reception/wp-content/uploads/sites/3/2017/05/safari-zoo.jpg" class = "responsive">  
-    <ion-input placeholder="firstname" [(ngModel)]="firstname"></ion-input>
-    <ion-input placeholder="lastname" [(ngModel)]="lastname"></ion-input>
-    <ion-input placeholder="email" [(ngModel)]="email"></ion-input>
-    <ion-input placeholder="password" [(ngModel)]="password"></ion-input>
-  
-    <button ion-button full (click)="register()">Register</button>
-  </ion-content>
+  <ion-navbar>
+    <ion-title>Register</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <img src="https://blog.thevalley.bolton.sch.uk/reception/wp-content/uploads/sites/3/2017/05/safari-zoo.jpg" class="responsive">
+  <ion-list padding>
+    <ion-list-header>Account Details</ion-list-header>
+    <ion-item>
+      <ion-input placeholder="firstname" [(ngModel)]="firstname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="lastname" [(ngModel)]="lastname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list padding>
+    <ion-list-header>Add a Card (Optional)</ion-list-header>
+    <ion-item>
+      <ion-label fixed>Full Name</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed> Card Number</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Exp (Mo/Yr)</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Security Code</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button full (click)="register()">Register</button>
+</ion-content>
