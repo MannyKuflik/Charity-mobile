@@ -13,6 +13,7 @@ export class RegistrationPage {
   public lastname: string;
   public email: string;
   public password: string;
+  public dob: string;
   constructor(public navCtrl: NavController, public navParams: NavParams, public http:Http) {}
 
   ionViewDidLoad() {
@@ -25,7 +26,8 @@ export class RegistrationPage {
           firstname: this.firstname,
           lastname: this.lastname,
           email: this.email,
-          password: this.password
+          password: this.password,
+          dob: this.dob,
         })
         .subscribe(
           result => {
@@ -34,8 +36,9 @@ export class RegistrationPage {
             this.navCtrl.push(ProfilePage, {
               firstname: this.firstname,
               lastname: this.lastname,
+              dob: this.dob,
               email: this.email,
-              password: this.password
+              password: this.password,
             });
           },
   

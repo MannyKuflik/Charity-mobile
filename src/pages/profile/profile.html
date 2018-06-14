@@ -1,18 +1,22 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Welcome!</ion-title>
+    <ion-title>Profile</ion-title>
   </ion-navbar>
 
-</ion-header>
+</ion-header> 
 
 
 <ion-content padding>
-  <p>
-    Welcome {{user.firstname}}, your password is: {{user.password}}
-  </p>
-  <ion-list>
-    <button ion-button full (click)="navToPortfolio()">Conservation Portfolio</button>
-    <button ion-button full (click)="navToCharityList()">Conservation Charities</button>
-  </ion-list>
+  <h1 padding style="text-align: center;">
+    Welcome {{this.user.firstname}}!
+  </h1>
+
+  <button ion-button full (click)="navToPortfolio()">Conservation Portfolio</button>
+
+  <button ion-button full (click)="navToCharityList()">Conservation Charities</button>
+
+  <button ion-button full (click)="navigateToSettings()">Settings</button>
+
+  <button ion-button full (click)="navigateToHome()">Logout</button>
 </ion-content>
