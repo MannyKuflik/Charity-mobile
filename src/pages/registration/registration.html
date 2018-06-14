@@ -1,18 +1,56 @@
 <ion-header>
 
-    <ion-navbar>
-      <ion-title>Register</ion-title>
-    </ion-navbar>
-  
-  </ion-header>
-  
-  
-  <ion-content padding>
-      <img src="https://blog.thevalley.bolton.sch.uk/reception/wp-content/uploads/sites/3/2017/05/safari-zoo.jpg" class = "responsive">  
-    <ion-input placeholder="firstname" [(ngModel)]="firstname"></ion-input>
-    <ion-input placeholder="lastname" [(ngModel)]="lastname"></ion-input>
-    <ion-input placeholder="email" [(ngModel)]="email"></ion-input>
-    <ion-input placeholder="password" [(ngModel)]="password"></ion-input>
-  
-    <button ion-button full (click)="register()">Register</button>
-  </ion-content>
+  <ion-navbar>
+    <ion-title>Register</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <img src="https://blog.thevalley.bolton.sch.uk/reception/wp-content/uploads/sites/3/2017/05/safari-zoo.jpg" class="responsive">
+  <ion-list padding>
+    <ion-list-header>Account Details</ion-list-header>
+    <ion-item>
+      <ion-label stacked>First Name</ion-label>
+      <ion-input [(ngModel)]="firstname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Last Name</ion-label>
+      <ion-input [(ngModel)]="lastname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Date of Birth</ion-label>
+      <ion-input [(ngModel)]="dob"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Password</ion-label>
+      <ion-input [(ngModel)]="password"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list padding>
+    <ion-list-header>Payment Details</ion-list-header>
+    <ion-item>
+      <ion-label stacked>Cardholder Name</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Credit Card Number</ion-label>
+      <ion-input type="text" placeholder="**** **** **** ****"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Expiration Date</ion-label>
+      <ion-input type="text" placeholder="MMYY"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Security Code</ion-label>
+      <ion-input type="text" placeholder="CVV"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button full (click)="register()">Register</button>
+</ion-content>

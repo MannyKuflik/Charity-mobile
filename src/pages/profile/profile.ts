@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, App } from 'ionic-angular';
 import { User } from '../../models/user';
 import { CharityListPage } from '../charity-list/charity-list';
 import { PortfolioPage } from '../portfolio/portfolio';
 import { DonationsPage } from '../donations/donations';
+import { HomePage } from '../home/home';
+import { SettingsPage } from '../settings/settings';
 
 @Component({
   selector: 'page-profile',
@@ -30,6 +32,16 @@ export class ProfilePage {
 
   navToPortfolio() {
     this.navCtrl.push(PortfolioPage);
+  }
+
+  navigateToHome() {
+    this.navCtrl.push(HomePage);
+    // this.navCtrl.popToRoot();
+    // this.app.getRootNav().setRoot(HomePage);
+}
+
+  navigateToSettings() {
+    this.navCtrl.push(SettingsPage);
   }
 
 }
