@@ -15,6 +15,7 @@ import { CharityProfilePage } from '../pages/charity-profile/charity-profile';
 import { PortfolioPage } from '../pages/portfolio/portfolio';
 import { DonationsPage } from '../pages/donations/donations';
 import { SettingsPage } from '../pages/settings/settings';
+import { AuthServ } from '../authserv';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { SettingsPage } from '../pages/settings/settings';
     StatusBar,
     SplashScreen,
     Camera,
+    AuthServ,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
