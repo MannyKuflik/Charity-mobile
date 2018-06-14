@@ -35,6 +35,7 @@ export class ProfilePage {
   }
 
   navigateToHome() {
+    localStorage.clear();
     this.navCtrl.push(HomePage);
     // this.navCtrl.popToRoot();
     // this.app.getRootNav().setRoot(HomePage);
