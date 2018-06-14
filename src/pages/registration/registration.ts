@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { NavController, NavParams } from "ionic-angular";
-import { ProfilePage } from "../profile/profile";
+import { LoginPage } from "../login/login";
 import { Http } from "@angular/http";
 
 @Component({
@@ -33,7 +33,7 @@ export class RegistrationPage {
           result => {
             console.log(result);
   
-            this.navCtrl.push(ProfilePage, {
+            this.navCtrl.push(LoginPage, {
               firstname: this.firstname,
               lastname: this.lastname,
               dob: this.dob,
