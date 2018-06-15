@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { decode} from 'jsonwebtoken';
 import { ProfilePage } from '../profile/profile';
+import { Http } from "@angular/http";
 
 
 /**
@@ -25,13 +26,15 @@ export class SettingsPage {
   password: string;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+  public http: Http) {
     this.token = localStorage.getItem("TOKEN");
     var details = decode(this.token);
+    this.userid = (details as any).user.id;
     this.firstname = (details as any).user.firstname;
-    this.firstname = (details as any).user.lastname;
-    this.firstname = (details as any).user.email;
-    this.firstname = (details as any).user.password;
+    this.lastname = (details as any).user.lastname;
+    this.email = (details as any).user.email;
+    this.password = (details as any).user.password;
   }
 
   ionViewDidLoad() {
@@ -39,7 +42,22 @@ export class SettingsPage {
   }
 
   update(){
-    this.navCtrl.push(ProfilePage);
+    this.http
+    .put("http://localhost:3000/'/users/settings'", {
+      id: this.userid,
+      firstname: this.firstname,
+      lastname: this.lastname,
+      email: this.email,
+      password: this.password,
+    })
+    .subscribe(
+      result => {
+        this.navCtrl.push(ProfilePage);
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
 }

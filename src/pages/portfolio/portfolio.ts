@@ -21,7 +21,7 @@ export class PortfolioPage {
   total: number = 100;
   num: number = 3;
   clist: string = "WWF, Turtles, Help Papi ";
-  
+
 
   constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams) {
     this.token = localStorage.getItem("TOKEN");
@@ -60,66 +60,81 @@ export class PortfolioPage {
     if ((typeof this.charity_name !== 'undefined') || (typeof this.amount !== 'undefined')) {
       this.addData(this.doughnutChart, this.charity_name, this.amount);
 
-{
-      this.http
-        .get("http://localhost:3000/donations/" + this.user_id, {
+      {
+        this.http
+          .get("http://localhost:3000/donations/" + this.user_id, {
 
-        })
-        .subscribe(
-          result => {
-            console.log(result);
-            this.chars = result.json();
-          },
-          error => {
-            console.log(error);
-          }
-        );
+          })
+          .subscribe(
+            result => {
+              console.log(result);
+              this.chars = result.json();
+            },
+            error => {
+              console.log(error);
+            }
+          );
       }
       {
         this.http
-        .get("http://localhost:3000/donations/money/" + this.user_id, {
+          .get("http://localhost:3000/donations/" + this.user_id, {
 
-        })
-
-        .subscribe(
-          result => {
-            console.log(result);
-            this.total = this.total + result.json();
-          },
-          error => {
-            console.log(error);
-          }
-        );
+          })
+          .subscribe(
+            result => {
+              console.log(result);
+              this.chars = result.json();
+            },
+            error => {
+              console.log(error);
+            }
+          );
       }
       {
         this.http
-        .get("http://localhost:3000/donations/num/" + this.user_id, {
+          .get("http://localhost:3000/donations/money/" + this.user_id, {
 
-        })
-        .subscribe(
-          result => {
-            console.log(result);
-            this.num = 3 + result.json();
-          },
-          error => {
-            console.log(error);
-          }
-        );
+          })
+
+          .subscribe(
+            result => {
+              console.log(result);
+              this.total = this.total + result.json();
+            },
+            error => {
+              console.log(error);
+            }
+          );
       }
       {
         this.http
-        .get("http://localhost:3000/donations/names/" + this.user_id, {
+          .get("http://localhost:3000/donations/num/" + this.user_id, {
 
-        })
-        .subscribe(
-          result => {
-            console.log(result);
-            this.clist = this.clist + result.json();
-          },
-          error => {
-            console.log(error);
-          }
-        );
+          })
+          .subscribe(
+            result => {
+              console.log(result);
+              this.num = 3 + result.json();
+            },
+            error => {
+              console.log(error);
+            }
+          );
+      }
+      {
+        this.http
+          .get("http://localhost:3000/donations/names/" + this.user_id, {
+
+          })
+          .subscribe(
+            result => {
+              console.log(result);
+              this.clist = this.clist + result.json();
+            },
+            error => {
+              console.log(error);
+            }
+          );
       }
     }
     // for(var i=0; i < 50; i++) {
@@ -127,9 +142,9 @@ export class PortfolioPage {
     //     }
   }
 
-profileSend(){
-  this.navCtrl.push(ProfilePage);
-}
+  profileSend() {
+    this.navCtrl.push(ProfilePage);
+  }
 
   getRandomColor() {
     var letters = '0123456789ABCDEF';
