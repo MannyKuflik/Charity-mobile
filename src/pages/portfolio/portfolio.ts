@@ -20,7 +20,7 @@ export class PortfolioPage {
   charity_name: string;
   total: number = 100;
   num: number = 3;
-  clist: string = "WWF, Turtles, Help Papi";
+  clist: string = "WWF, Turtles, Help Papi ";
   
 
   constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams) {
@@ -60,6 +60,7 @@ export class PortfolioPage {
     if ((typeof this.charity_name !== 'undefined') || (typeof this.amount !== 'undefined')) {
       this.addData(this.doughnutChart, this.charity_name, this.amount);
 
+{
       this.http
         .get("http://localhost:3000/donations/" + this.user_id, {
 
@@ -73,11 +74,13 @@ export class PortfolioPage {
             console.log(error);
           }
         );
-
+      }
+      {
         this.http
         .get("http://localhost:3000/donations/money/" + this.user_id, {
 
         })
+
         .subscribe(
           result => {
             console.log(result);
@@ -87,7 +90,8 @@ export class PortfolioPage {
             console.log(error);
           }
         );
-
+      }
+      {
         this.http
         .get("http://localhost:3000/donations/num/" + this.user_id, {
 
@@ -101,7 +105,8 @@ export class PortfolioPage {
             console.log(error);
           }
         );
-
+      }
+      {
         this.http
         .get("http://localhost:3000/donations/names/" + this.user_id, {
 
@@ -116,6 +121,7 @@ export class PortfolioPage {
           }
         );
       }
+    }
     // for(var i=0; i < 50; i++) {
     //       this.addData(this.doughnutChart, this.chars[i], this.chars[i+1]);
     //     }

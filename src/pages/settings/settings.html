@@ -21,10 +21,6 @@
       <ion-input [(ngModel)]="lastname"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label stacked>Date of Birth</ion-label>
-      <ion-input [(ngModel)]="dob"></ion-input>
-    </ion-item>
-    <ion-item>
       <ion-label stacked>Email</ion-label>
       <ion-input [(ngModel)]="email"></ion-input>
     </ion-item>
@@ -34,5 +30,5 @@
     </ion-item>  
 </ion-list>
 
-<button ion-button full>Save Changes</button>
+<button ion-button full (click)="update()" >Save Changes</button>
 </ion-content>
