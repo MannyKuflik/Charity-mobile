@@ -13,38 +13,43 @@
         when completed.</p>
 
     <ion-list>
+        <p class="center">
+            <ion-icon class="icon-large" name="card"></ion-icon>
+        </p>
+        <section>
 
-        <ion-item>
-            <ion-label fixed>Full Name</ion-label>
-            <ion-input type="text" value=""></ion-input>
-        </ion-item>
+            <form action="/" method="post" id="payment-form">
 
-        <ion-item>
-                <ion-label fixed>Amount</ion-label>
-                <ion-input type="text" value=""></ion-input>
-        </ion-item>
+                <div class="form-row">
+                    <div id="card-element">
+                        <!-- a Stripe Element will be inserted here. -->
+                    </div>
 
-        <ion-item>
-            <ion-label fixed> Card Number</ion-label>
-            <ion-input type="text"></ion-input>
-        </ion-item>
+                    <!-- Used to display Element errors -->
+                    <div id="card-errors" role="alert"></div>
+                </div>
 
-        <ion-item>
-            <ion-label fixed>Exp (Mo/Yr)</ion-label>
-            <ion-input type="text"></ion-input>
-        </ion-item>
+                <ion-item>
+                    <ion-label>Monthly</ion-label>
+                    <ion-checkbox [(ngModel)]="monthly" [ngModelOptions]="{standalone: true}"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                    <ion-label>One Time</ion-label>
+                    <ion-checkbox [(ngModel)]="one_time" [ngModelOptions]="{standalone: true}"></ion-checkbox>
+                </ion-item>
+                <br>
 
-        <ion-item>
-            <ion-label fixed>Security Code</ion-label>
-            <ion-input type="text" value=""></ion-input>
-        </ion-item>
+                <ion-item>
+                        <ion-label>Amount:</ion-label>
+                        <ion-input type="number" [(ngModel)]="amount" [ngModelOptions]="{standalone: true}"></ion-input>
+                    </ion-item>
 
-        <ion-item>
-            <ion-label fixed>Monthly? (yes/no)</ion-label>
-            <ion-input type="text" value=""></ion-input>
-        </ion-item>
+                <button ion-button block>Submit Donation</button>
+
+            </form>
+
+        </section>
 
     </ion-list>
-    <button ion-button full (click)="navToPortfolioTakeTwo()">Submit Donation</button>
 
 </ion-content>

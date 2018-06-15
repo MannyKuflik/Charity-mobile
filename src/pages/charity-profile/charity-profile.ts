@@ -19,6 +19,6 @@ export class CharityProfilePage {
   }
 
   navToDonations() {
-    this.navCtrl.push(DonationsPage);
+    this.navCtrl.push(DonationsPage, {charity_id: this.charity.id, charity_name: this.charity.name});
   }  
 }

@@ -1,20 +1,23 @@
 <ion-header>
 
-        <ion-navbar>
-          <ion-title> Conservation Portfolio </ion-title>
-        </ion-navbar>
-      
-      </ion-header>
-      
-      
-      <ion-content padding> 
-          <canvas #doughnutCanvas></canvas>
-        <ion-list>
-            <p> Raised for Conservation: </p>
-            <p> Total Conservation Projects: </p>
-            <p> Conservation Portfolio: </p>
-            <p> Conservation Projects: </p>
-        </ion-list>
+  <ion-navbar>
+    <ion-title> Conservation Portfolio </ion-title>
+  </ion-navbar>
 
-      </ion-content>
-      
+</ion-header>
+
+
+<ion-content padding>
+  <h1>{{message}}</h1>
+  <canvas #doughnutCanvas></canvas>
+  <ion-list>
+    <button (click)="profileSend()"> View Profile</button>
+    <p> Raised for Conservation: <b> {{ total }} </b></p>
+    <p> Total Conservation Projects: <b> {{ num }} </b> </p>
+    <p> Conservation Projects:<b> {{ clist }} </b></p>
+  </ion-list>
+  <ion-item-divider style="background-color: azure"> Donation History </ion-item-divider>
+  <section>
+    <p>{{ chars }}</p>
+  </section>
+</ion-content>

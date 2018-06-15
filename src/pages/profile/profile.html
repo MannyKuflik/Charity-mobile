@@ -9,8 +9,12 @@
 
 <ion-content padding>
   <h1 padding style="text-align: center;">
-    Welcome {{this.user.firstname}}!
+    Welcome {{name}}!
   </h1>
+
+  <ion-avatar item-start align="center">
+    <img src="assets/imgs/avatar.png">
+  </ion-avatar>
 
   <button ion-button full (click)="navToPortfolio()">Conservation Portfolio</button>
 

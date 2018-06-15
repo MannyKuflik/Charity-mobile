@@ -6,6 +6,7 @@ import { PortfolioPage } from '../portfolio/portfolio';
 import { DonationsPage } from '../donations/donations';
 import { HomePage } from '../home/home';
 import { SettingsPage } from '../settings/settings';
+import { sign, verify, decode} from 'jsonwebtoken';
 
 @Component({
   selector: 'page-profile',
@@ -13,17 +14,20 @@ import { SettingsPage } from '../settings/settings';
 })
 export class ProfilePage {
 
-  public user: User;
+  public name: string;
+  public token: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.user = new User();
+    this.token = localStorage.getItem("TOKEN");
+    var details = decode(this.token);
+    this.name = (details as any).user.firstname + " " + (details as any).user.lastname;
   }
 
   ionViewDidLoad() {
-    this.user.firstname = this.navParams.get('firstname');
-    this.user.lastname = this.navParams.get('lastname');
-    this.user.email = this.navParams.get("email");
-    this.user.password = this.navParams.get("password");
+    // this.user.firstname = this.navParams.get('firstname');
+    // this.user.lastname = this.navParams.get('lastname');
+    // this.user.email = this.navParams.get("email");
+    // this.user.password = this.navParams.get("password");
   }
 
   navToCharityList() {

@@ -13,7 +13,7 @@ export class RegistrationPage {
   public lastname: string;
   public email: string;
   public password: string;
-  public dob: string;
+  cpassword: string;
   constructor(public navCtrl: NavController, public navParams: NavParams, public http:Http) {}
 
   ionViewDidLoad() {
@@ -21,31 +21,34 @@ export class RegistrationPage {
   }
 
     register() {
+      if (!this.password || !this.email || 
+        !this.firstname || !this.lastname ||
+      !this.cpassword) {
+        alert("Please fill out ALL entries")
+      }
+      else {
+      if (this.password == this.cpassword) {
       this.http
         .post("http://localhost:3000/registration", {
           firstname: this.firstname,
           lastname: this.lastname,
           email: this.email,
           password: this.password,
-          dob: this.dob,
         })
         .subscribe(
           result => {
             console.log(result);
   
-            this.navCtrl.push(LoginPage, {
-              firstname: this.firstname,
-              lastname: this.lastname,
-              dob: this.dob,
-              email: this.email,
-              password: this.password,
-            });
+            this.navCtrl.push(LoginPage);
           },
-  
           error => {
             console.log(error);
           }
         ); 
-    
+      }
+      else {
+        alert("Passwords do not match!")
+      }
+    }
   }
 }
