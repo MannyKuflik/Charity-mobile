@@ -47,7 +47,7 @@ export class LoginPage {
       if (err) {
         return;
       }
-      this.navCtrl.push(ProfilePage);
+      this.navCtrl.setRoot(ProfilePage);
     }
     this.authService.login(this.email, this.password, cb)
 
