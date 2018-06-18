@@ -3,6 +3,7 @@ import { NavController, NavParams } from "ionic-angular";
 import { ProfilePage } from "../profile/profile";
 import { Http } from "@angular/http";
 import { AuthServ } from '../../authserv';
+import { MenuPage } from "../menu/menu";
 
 @Component({
   selector: "page-login",

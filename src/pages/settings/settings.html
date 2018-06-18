@@ -1,7 +1,11 @@
-
 <ion-header>
 
   <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>Settings</ion-title>
   </ion-navbar>
 
@@ -9,10 +13,10 @@
 
 
 <ion-content padding>
-<ion-list padding>
-  <ion-list-header>Account</ion-list-header>
-  Change your basic account settings.
-  <ion-item>
+  <ion-list padding>
+    <ion-list-header>Account</ion-list-header>
+    Change your basic account settings.
+    <ion-item>
       <ion-label stacked>First Name</ion-label>
       <ion-input [(ngModel)]="firstname"></ion-input>
     </ion-item>
@@ -27,8 +31,8 @@
     <ion-item>
       <ion-label stacked>Password</ion-label>
       <ion-input [(ngModel)]="password"></ion-input>
-    </ion-item>  
-</ion-list>
+    </ion-item>
+  </ion-list>
 
-<button ion-button full (click)="update()" >Save Changes</button>
+  <button ion-button full (click)="update()">Save Changes</button>
 </ion-content>

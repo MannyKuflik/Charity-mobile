@@ -15,6 +15,7 @@ import { CharityProfilePage } from '../pages/charity-profile/charity-profile';
 import { PortfolioPage } from '../pages/portfolio/portfolio';
 import { DonationsPage } from '../pages/donations/donations';
 import { SettingsPage } from '../pages/settings/settings';
+import { MenuPage } from '../pages/menu/menu';
 import { AuthServ } from '../authserv';
 
 @NgModule({
@@ -28,7 +29,8 @@ import { AuthServ } from '../authserv';
     RegistrationPage,
     PortfolioPage,
     DonationsPage,
-    SettingsPage
+    SettingsPage,
+    MenuPage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ import { AuthServ } from '../authserv';
     RegistrationPage,
     PortfolioPage,
     DonationsPage,
-    SettingsPage
+    SettingsPage,
+    MenuPage
   ],
   providers: [
     StatusBar,

@@ -1,0 +1,14 @@
+<ion-menu [content]="content">
+  <ion-content padding>
+    <ion-list>
+
+      <button ion-item menuClose (click)="openPage(charityList)">List of Charities</button>
+      <button ion-item menuClose (click)="openPage(rootPage)">My Profile</button>
+      <button ion-item menuClose (click)="openPage(portfolioPage)">My Portfolio</button>
+      <button ion-item menuClose (click)="openPage(settingsPage)">Settings</button>
+
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
