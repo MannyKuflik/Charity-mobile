@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, Nav } from 'ionic-angular';
+import { NavController, NavParams, Nav, IonicPage } from 'ionic-angular';
 import { ProfilePage } from '../profile/profile';
 import { CharityListPage } from '../charity-list/charity-list';
 import { SettingsPage } from '../settings/settings';
@@ -14,6 +14,7 @@ import { HomePage } from '../home/home';
 //   icon: string;
 // }
 
+@IonicPage()
 @Component({
   selector: 'page-menu',
   templateUrl: 'menu.html',
@@ -28,6 +29,7 @@ export class MenuPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.rootPage = ProfilePage;
+    this.profilePage = ProfilePage;
     this.settingsPage = SettingsPage;
     this.portfolioPage = PortfolioPage;
     this.charityList = CharityListPage;
@@ -40,12 +42,19 @@ export class MenuPage {
     // }
   }
 
+  navigateToProfile() {
+    this.navCtrl.push(this.profilePage);
+  }
   navigateToSettings() {
     this.navCtrl.push(this.settingsPage);
   }
   
-
-  // openPage(p) {
-  //   this.rootPage = p;
-  // }
+  navigateToHome() {
+    localStorage.clear();
+    this.navCtrl.push(HomePage);
 }
+
+  openPage(p) {
+    this.rootPage = p;
+  }
+} 

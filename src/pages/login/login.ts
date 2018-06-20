@@ -30,8 +30,8 @@ export class LoginPage {
         result => {
           var UserToken = result.json();
           localStorage.setItem("Token", UserToken.token);
-          this.navCtrl.setRoot(MenuPage);
-          this.navCtrl.popToRoot();
+          // this.navCtrl.setRoot(MenuPage);
+          // this.navCtrl.popToRoot();
     //       console.log(result.json().firstname);
     //       var user = result.json();
 
@@ -52,7 +52,9 @@ export class LoginPage {
       if (err) {
         return;
       }
-      this.navCtrl.setRoot(ProfilePage);
+      // this.navCtrl.setRoot(ProfilePage);
+      this.navCtrl.setRoot(MenuPage);
+      this.navCtrl.popToRoot();
     }
     this.authService.login(this.email, this.password, cb)
 
