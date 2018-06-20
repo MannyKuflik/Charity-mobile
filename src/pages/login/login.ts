@@ -4,6 +4,7 @@ import { ProfilePage } from "../profile/profile";
 import { Http } from "@angular/http";
 import { AuthServ } from '../../authserv';
 import { MenuPage } from "../menu/menu";
+import { RegistrationPage } from "../registration/registration";
 
 @Component({
   selector: "page-login",
@@ -58,5 +59,8 @@ export class LoginPage {
     }
     this.authService.login(this.email, this.password, cb)
 
+  }
+  register() {
+    this.navCtrl.push(RegistrationPage);
   }
 }

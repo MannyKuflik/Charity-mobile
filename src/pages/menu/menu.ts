@@ -42,12 +42,12 @@ export class MenuPage {
     // }
   }
 
-  navigateToProfile() {
-    this.navCtrl.push(this.profilePage);
-  }
-  navigateToSettings() {
-    this.navCtrl.push(this.settingsPage);
-  }
+  // navigateToProfile() {
+  //   this.navCtrl.push(this.profilePage);
+  // }
+  // navigateToSettings() {
+  //   this.navCtrl.push(this.settingsPage);
+  // }
   
   navigateToHome() {
     localStorage.clear();

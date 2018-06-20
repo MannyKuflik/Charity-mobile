@@ -6,9 +6,13 @@ page-login {
         color: rgb(53, 124, 218);
         border: 1px solid rgb(81, 124, 218);
         width: 100%;
+        border-radius: 12px;
         // height: 8%;
     }
     .title {
         text-align: left;
+    }
+    .content {
+        // background-color: rgb(219, 112, 25);
     }
 }
