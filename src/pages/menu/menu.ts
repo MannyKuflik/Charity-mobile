@@ -4,6 +4,7 @@ import { ProfilePage } from '../profile/profile';
 import { CharityListPage } from '../charity-list/charity-list';
 import { SettingsPage } from '../settings/settings';
 import { PortfolioPage } from '../portfolio/portfolio';
+import { HomePage } from '../home/home';
 
 // export interface PageInterface {
 //   title: string;
