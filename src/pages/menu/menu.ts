@@ -20,15 +20,11 @@ import { PortfolioPage } from '../portfolio/portfolio';
 export class MenuPage {
 
   private rootPage;
+  private profilePage;
   private settingsPage;
   private portfolioPage;
   private charityList;
 
-  @ViewChild(Nav) nav: Nav;
-
-  // pages: PageInterface [] = [
-  //   { title: 'List of Charities', pageName: CharityListPage}
-  // ]
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.rootPage = ProfilePage;
     this.settingsPage = SettingsPage;
@@ -37,10 +33,18 @@ export class MenuPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MenuPage');
+    // if (localStorage.getItem("TOKEN")) {
+    //   this.navCtrl.setRoot(ProfilePage);
+    //   this.rootPage = ProfilePage;
+    // }
   }
 
-  openPage(p) {
-    this.rootPage = p;
+  navigateToSettings() {
+    this.navCtrl.push(this.settingsPage);
   }
+  
+
+  // openPage(p) {
+  //   this.rootPage = p;
+  // }
 }

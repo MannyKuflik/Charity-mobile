@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, App } from 'ionic-angular';
+import { NavController, NavParams, App, MenuController } from 'ionic-angular';
 import { User } from '../../models/user';
 import { CharityListPage } from '../charity-list/charity-list';
 import { PortfolioPage } from '../portfolio/portfolio';
@@ -17,10 +17,11 @@ export class ProfilePage {
   public name: string;
   public token: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,menu: MenuController) {
     this.token = localStorage.getItem("TOKEN");
     var details = decode(this.token);
     this.name = (details as any).user.firstname + " " + (details as any).user.lastname;
+    menu.enable(true);
   }
 
   ionViewDidLoad() {

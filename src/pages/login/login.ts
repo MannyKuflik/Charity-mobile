@@ -21,13 +21,17 @@ export class LoginPage {
   }
 
   login() {
-    // this.http
-    //   .post("http://localhost:3000/login", {
-    //     email: this.email,
-    //     password: this.password
-    //   })
-    //   .subscribe(
-    //     result => {
+    this.http
+      .post("http://localhost:3000/login", {
+        email: this.email,
+        password: this.password
+      })
+      .subscribe(
+        result => {
+          var UserToken = result.json();
+          localStorage.setItem("Token", UserToken.token);
+          this.navCtrl.setRoot(MenuPage);
+          this.navCtrl.popToRoot();
     //       console.log(result.json().firstname);
     //       var user = result.json();
 
@@ -42,8 +46,8 @@ export class LoginPage {
 
     //     error => {
     //       console.log(error);
-    //     }
-    //   );
+        }
+      );
     let cb = (err) => {
       if (err) {
         return;
