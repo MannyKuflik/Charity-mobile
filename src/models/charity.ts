@@ -3,6 +3,8 @@ export class Charity {
     name: string;
     description: string;
     link: string;
-    photo: string;
+    photo1: string;
+    photo2: string;
+    photo3: string;
     logoUrl: string;
 }

@@ -1,37 +1,44 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{charity.name}}</ion-title>
+    <ion-title>Details</ion-title>
     <ion-buttons right>
+      <button ion-button (click)="navigateToProfile()">
         <img alt="logo" height="40" right src="assets/imgs/donationsafari.png">
-      </ion-buttons>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content align="center" padding>
+  <img align="center" height="75" width="75" src={{charity.logoUrl}}>
   <h1 align="center">
     <b style="font-size: 40px">
       <u>{{charity.name}}</u>
     </b>
   </h1>
-  <ion-avatar item-start align="center">
-    <img style="width:100%" src={{charity.logoUrl}}>
-    <br>
-    <!-- <img style="width:100%" src="assets/imgs/logo.jpg"> -->
-  </ion-avatar>
-  <section style="background-color: rgba(255, 115, 0, 0.767)">
-    <h3>
-      <b style="font-size: 30px">{{charity.description}}</b>
-    </h3>
-  </section>
-
-
-  <ion-item-divider style="background-color: rgb(90, 180, 216)">
-    <a style="font-size: 20px; color: black" href="https://en.wikipedia.org/wiki/List_of_charitable_foundations"> {{charity.link}}</a>
-  </ion-item-divider>
-  <br>
-  <button ion-button full (click)="navToDonations()">Donate NOW!</button>
-
+  <a style="font-style: italic; font-size: 15px; color: black" href={{charity.link}}> {{charity.link}}</a>
+  <ion-slides pager>
+    <ion-slide>
+      <img style="width:100%" src={{charity.photo1}}>
+    </ion-slide>
+    <ion-slide>
+      <img style="width:100%" src={{charity.photo2}}>
+    </ion-slide>
+    <ion-slide>
+      <img style="width:100%" src={{charity.photo3}}>
+    </ion-slide>
+  </ion-slides>
+  <!-- <section style="background-color: rgba(255, 115, 0, 0.767)"> -->
+  <h3 align="left">Details</h3>
+  <p>{{charity.description}}</p>
+  <!-- </section> -->
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button full (click)="navToDonations()">Donate NOW!</button>
+  </ion-toolbar>
+</ion-footer>

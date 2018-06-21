@@ -6,15 +6,17 @@
             </button>
         </ion-buttons>
         <ion-buttons right>
-                <img alt="logo" height="40" right src="assets/imgs/donationsafari.png">
-              </ion-buttons>
-        <ion-title style= "font-weight: bold">
+            <button ion-button (click)="navigateToProfile()">
+            <img alt="logo" height="40" right src="assets/imgs/donationsafari.png">
+            </button>
+        </ion-buttons>
+        <ion-title style="font-weight: bold">
             Browse Charities
         </ion-title>
     </ion-navbar>
 </ion-header>
 
-<ion-content padding >
+<ion-content padding>
     <ion-list no-lines>
         <ion-item *ngFor="let charity of charities">
             <ion-thumbnail item-start>

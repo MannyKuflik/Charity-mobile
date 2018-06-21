@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { decode} from 'jsonwebtoken';
+import { decode } from 'jsonwebtoken';
 import { ProfilePage } from '../profile/profile';
 import { Http } from "@angular/http";
 import { AuthServ } from '../../authserv';
@@ -31,7 +31,7 @@ export class SettingsPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-  public http: Http, public authService: AuthServ) {
+    public http: Http, public authService: AuthServ) {
     this.token = localStorage.getItem("TOKEN");
     var details = decode(this.token);
     this.userid = (details as any).user.id;
@@ -49,33 +49,37 @@ export class SettingsPage {
 
   update() {
     if (this.npassword == this.cpassword) {
-    this.http
-    .put(this.authService.getBaseUrl() + "/users/settings", {
-      user: {
-        id: this.userid,
-        firstname: this.firstname,
-        lastname: this.lastname,
-        email: this.email,
-        password: this.password,
-      },
-      npassword: this.npassword,
-    })
-    .subscribe(
-      result => {
-        var UserToken = result.json();
-        localStorage.clear();
-        localStorage.setItem("TOKEN", UserToken.token);
-        this.navCtrl.setRoot(MenuPage);
-      },
-      error => {
-        alert("Incorrect Password. Input correct password to apply setting changes");
-        console.log(error);
-      }
-    );
+      this.http
+        .put(this.authService.getBaseUrl() + "/users/settings", {
+          user: {
+            id: this.userid,
+            firstname: this.firstname,
+            lastname: this.lastname,
+            email: this.email,
+            password: this.password,
+          },
+          npassword: this.npassword,
+        })
+        .subscribe(
+          result => {
+            var UserToken = result.json();
+            localStorage.clear();
+            localStorage.setItem("TOKEN", UserToken.token);
+            this.navCtrl.setRoot(MenuPage);
+          },
+          error => {
+            alert("Incorrect Password. Input correct password to apply setting changes");
+            console.log(error);
+          }
+        );
+    }
+    else {
+      alert("New passwords do not match!")
+    }
   }
-  else {
-    alert("New passwords do not match!")
+
+  navigateToProfile() {
+    this.navCtrl.push(ProfilePage);
   }
-}
 
 }

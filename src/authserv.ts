@@ -1,11 +1,13 @@
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
+import { MenuPage } from './pages/menu/menu';
+//import { NavController } from 'ionic-angular';
 
 @Injectable()
 
 export class AuthServ {
 
-    constructor(public http: Http) {
+    constructor(public http: Http/*, public navCtrl: NavController*/) {
 
     }
 
@@ -26,6 +28,8 @@ export class AuthServ {
                     var response = result.json();
 
                     localStorage.setItem("TOKEN", response.token);
+                    // this.navCtrl.setRoot(MenuPage);
+                    //this.navCtrl.popToRoot();
 
                     callback();
 

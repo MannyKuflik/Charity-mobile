@@ -172,5 +172,9 @@ export class PortfolioPage {
     });
     chart.update();
   }
+  
+  navigateToProfile() {
+    this.navCtrl.push(ProfilePage);
+  }
 }
 
