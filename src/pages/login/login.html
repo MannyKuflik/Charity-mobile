@@ -9,12 +9,19 @@
 
 <ion-content padding>
 
-  <!-- <img src="https://blog.thevalley.bolton.sch.uk/reception/wp-content/uploads/sites/3/2017/05/safari-zoo.jpg" class="responsive"> -->
-  <ion-input placeholder="email" [(ngModel)]="email"></ion-input>
-  <ion-input placeholder="password" type="password" [(ngModel)]="password"></ion-input>
-  <br>
+  <ion-list padding>
+    <!-- <img src="https://blog.thevalley.bolton.sch.uk/reception/wp-content/uploads/sites/3/2017/05/safari-zoo.jpg" class="responsive"> -->
+    <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+  </ion-list>
+
   <button ion-button clear full (click)="login()">Sign in</button>
   <br>
   <button ion-button clear full (click)="register()">Sign up</button>
-
 </ion-content>

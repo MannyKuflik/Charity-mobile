@@ -18,24 +18,28 @@ export class CharityListPage {
     charity1.name = "Rhino Poaching";
     charity1.description = "Save the Rhinos!";
     charity1.link="www.savetherhinos.com";
+    charity1.photo="assets/imgs/rhino.png";
 
     var charity2 = new Charity();
     charity2.id = 2;
     charity2.name = "Dog Poaching";
     charity2.description = "Save the dogs!";
     charity2.link="www.savethedogs.com";
+    charity2.photo="assets/imgs/dog.jpg";
 
     var charity3 = new Charity();
     charity3.id = 3;
     charity3.name = "Elephant Poaching";
     charity3.description = "Save the elephants!";
     charity3.link="www.savetheelephants.com";
+    charity3.photo="assets/imgs/elephant.jpg";
 
     var charity4 = new Charity();
     charity4.id = 4;
     charity4.name = "Lion Poaching";
     charity4.description = "Save the lions!";
     charity4.link="www.savethelions.com";
+    charity4.photo="assets/imgs/lion.png";
 
     this.charities.push(charity1);
     this.charities.push(charity2);

@@ -1,19 +1,21 @@
 <ion-header>
 
   <ion-navbar>
+    <ion-title>{{charity.name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content align="center" padding>
-  <h1 align="center">
+  <!-- <h1 align="center">
     <b style="font-size: 40px">
       <u>{{charity.name}}</u>
     </b>
-  </h1>
+  </h1> -->
   <ion-avatar item-start align="center">
-    <img style="width:100%" src="assets/imgs/logo.jpg">
+    <img style="width:100%" src={{charity.photo}}>
+    <!-- <img style="width:100%" src="assets/imgs/logo.jpg"> -->
   </ion-avatar>
   <ion-item-divider style="background-color: aqua">
     <h3>
@@ -25,7 +27,7 @@
   <ion-item-divider style="background-color: skyblue">
     <a style="font-size: 20px; color: black" href="https://en.wikipedia.org/wiki/List_of_charitable_foundations"> {{charity.link}}</a>
   </ion-item-divider>
-
+  <br>
   <button ion-button full (click)="navToDonations()">Donate NOW!</button>
 
 </ion-content>
