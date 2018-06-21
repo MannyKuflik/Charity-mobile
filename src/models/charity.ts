@@ -4,4 +4,5 @@ export class Charity {
     description: string;
     link: string;
     photo: string;
+    logoUrl: string;
 }
