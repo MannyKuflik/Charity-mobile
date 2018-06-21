@@ -45,10 +45,38 @@ export class CharityListPage {
     charity4.logoUrl = "assets/imgs/lionaid.png";
     // charity4.photo = "lion.png";
 
+    var charity5 = new Charity();
+    charity5.id = 5;
+    charity5.name = "Cheetah Conservation Fund";
+    charity5.description = "Founded in Namibia in 1990, Cheetah Conservation Fund (CCF) is the global leader in research and conservation of cheetahs. CCF is dedicated to saving the cheetah in the wild.";
+    charity5.link="https://cheetah.org/about-us/";
+    charity5.logoUrl = "assets/imgs/cheetah.png";
+    // charity5.photo = "lion.png";
+
+    var charity6 = new Charity();
+    charity6.id = 6;
+    charity6.name = "World Wide Fund for Nature";
+    charity6.description = "Our mission is to conserve nature and reduce the most pressing threats to the diversity of life on Earth.";
+    charity6.link="https://www.worldwildlife.org";
+    charity6.logoUrl = "assets/imgs/wwf.png";
+    // charity5.photo = "lion.png";
+
+    var charity7 = new Charity();
+    charity7.id = 7;
+    charity7.name = "Wildlife Conservation Society";
+    charity7.description = "We have solutions that work. Together, we can restore healthy forests filled with growing elephant families. Donate today.";
+    charity7.link="https://www.wcs.org";
+    charity7.logoUrl = "assets/imgs/wcs.png";
+    // charity5.photo = "lion.png";
+
+
     this.charities.push(charity1);
     this.charities.push(charity2);
     this.charities.push(charity3);
     this.charities.push(charity4);
+    this.charities.push(charity5);
+    this.charities.push(charity6);
+    this.charities.push(charity7);
   }
 
   ionViewDidLoad() {
