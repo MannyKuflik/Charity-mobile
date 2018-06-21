@@ -11,14 +11,14 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding >
     <ion-list no-lines>
-        <ion-item *ngFor="let charity of charities">
+        <ion-item style="background-color: black" *ngFor="let charity of charities">
             <ion-thumbnail item-start>
                 <img src={{charity.logoUrl}}>
             </ion-thumbnail>
             <div item-content style="width: 100%">
-                <h2 style="text-align: center; font-weight: bold"> {{charity.name}} </h2>
+                <h2 style="text-align: center; font-weight: bold; color: snow"> {{charity.name}} </h2>
                 <button ion-button clear (click)="navigateToCharity(charity)" item-end>View</button>
             </div>
         </ion-item>
