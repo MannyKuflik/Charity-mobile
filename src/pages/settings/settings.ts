@@ -4,6 +4,7 @@ import { decode} from 'jsonwebtoken';
 import { ProfilePage } from '../profile/profile';
 import { Http } from "@angular/http";
 import { AuthServ } from '../../authserv';
+import { MenuPage } from '../menu/menu';
 
 
 /**
@@ -64,9 +65,10 @@ export class SettingsPage {
         var UserToken = result.json();
         localStorage.clear();
         localStorage.setItem("TOKEN", UserToken.token);
-        this.navCtrl.setRoot(ProfilePage);
+        this.navCtrl.setRoot(MenuPage);
       },
       error => {
+        alert("Incorrect Password. Input correct password to apply setting changes");
         console.log(error);
       }
     );

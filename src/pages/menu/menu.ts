@@ -56,5 +56,6 @@ export class MenuPage {
 
   openPage(p) {
     this.rootPage = p;
+    console.log(p);
   }
 } 
