@@ -45,7 +45,7 @@ export class MenuPage {
   }
   
 
-  // openPage(p) {
-  //   this.rootPage = p;
-  // }
+  openPage(p) {
+    this.navCtrl.push(p);
+  }
 }
