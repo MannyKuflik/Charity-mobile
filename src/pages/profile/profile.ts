@@ -25,6 +25,10 @@ export class ProfilePage {
   }
 
   ionViewDidLoad() {
+    this.token = localStorage.getItem("TOKEN");
+    var details = decode(this.token);
+    this.name = (details as any).user.firstname + " " + (details as any).user.lastname;
+   console.log("updated");
     // this.user.firstname = this.navParams.get('firstname');
     // this.user.lastname = this.navParams.get('lastname');
     // this.user.email = this.navParams.get("email");

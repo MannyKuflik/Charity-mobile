@@ -41,9 +41,9 @@ export class SettingsPage {
     console.log('ionViewDidLoad SettingsPage');
   }
 
-  update(){
+  update() {
     this.http
-    .put("http://localhost:3000/'/users/settings'", {
+    .put("http://localhost:3000/users/settings", {
       id: this.userid,
       firstname: this.firstname,
       lastname: this.lastname,
@@ -52,6 +52,9 @@ export class SettingsPage {
     })
     .subscribe(
       result => {
+        var UserToken = result.json();
+        localStorage.clear();
+        localStorage.setItem("Token", UserToken.token);
         this.navCtrl.push(ProfilePage);
       },
       error => {

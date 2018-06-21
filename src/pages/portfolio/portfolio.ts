@@ -99,7 +99,8 @@ export class PortfolioPage {
           .subscribe(
             result => {
               console.log(result);
-              this.total = this.total + result.json();
+              var add = result.json();
+              this.total = this.total + add;
             },
             error => {
               console.log(error);
