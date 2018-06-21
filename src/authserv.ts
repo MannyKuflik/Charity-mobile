@@ -11,7 +11,7 @@ export class AuthServ {
 
     login(email: string, password: string, callback: Function) {
         this.http
-            .post("http://localhost:3000/login", {
+            .post("https://full-smacked-api.herokuapp.com/login", {
                 email: email,
                 password: password
             })

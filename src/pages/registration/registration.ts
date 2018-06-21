@@ -30,7 +30,7 @@ export class RegistrationPage {
       if (this.password == this.cpassword) {
         if (this.email.includes("@") && this.email.includes(".")) {
           this.http
-            .post("http://localhost:3000/registration", {
+            .post("https://full-smacked-api.herokuapp.com/registration", {
               firstname: this.firstname,
               lastname: this.lastname,
               email: this.email,

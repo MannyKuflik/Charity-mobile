@@ -23,7 +23,7 @@ export class LoginPage {
 
   login() {
     this.http
-      .post("https://full-smacked-api.herokuapp.com//login", {
+      .post("https://full-smacked-api.herokuapp.com/login", {
         email: this.email,
         password: this.password
       })

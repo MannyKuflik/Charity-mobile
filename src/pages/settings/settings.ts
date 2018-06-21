@@ -43,7 +43,7 @@ export class SettingsPage {
 
   update() {
     this.http
-    .put("http://localhost:3000/users/settings", {
+    .put("https://full-smacked-api.herokuapp.com/users/settings", {
       id: this.userid,
       firstname: this.firstname,
       lastname: this.lastname,

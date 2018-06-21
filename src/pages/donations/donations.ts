@@ -113,7 +113,7 @@ export class DonationsPage {
 
         {
           this.http
-            .post("http://localhost:3000/donations", {
+            .post("https://full-smacked-api.herokuapp.com/donations", {
               amount: this.amount,
               user_id: this.user_id,
               charity_id: this.charity_id,

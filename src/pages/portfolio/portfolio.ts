@@ -62,7 +62,7 @@ export class PortfolioPage {
 
       {
         this.http
-          .get("http://localhost:3000/donations/" + this.user_id, {
+          .get("https://full-smacked-api.herokuapp.com/donations/" + this.user_id, {
 
           })
           .subscribe(
@@ -77,7 +77,7 @@ export class PortfolioPage {
       }
       {
         this.http
-          .get("http://localhost:3000/donations/" + this.user_id, {
+          .get("https://full-smacked-api.herokuapp.com/donations/" + this.user_id, {
 
           })
           .subscribe(
@@ -92,7 +92,7 @@ export class PortfolioPage {
       }
       {
         this.http
-          .get("http://localhost:3000/donations/money/" + this.user_id, {
+          .get("https://full-smacked-api.herokuapp.com/donations/money/" + this.user_id, {
 
           })
 
@@ -109,7 +109,7 @@ export class PortfolioPage {
       }
       {
         this.http
-          .get("http://localhost:3000/donations/num/" + this.user_id, {
+          .get("https://full-smacked-api.herokuapp.com/donations/num/" + this.user_id, {
 
           })
           .subscribe(
@@ -124,7 +124,7 @@ export class PortfolioPage {
       }
       {
         this.http
-          .get("http://localhost:3000/donations/names/" + this.user_id, {
+          .get("https://full-smacked-api.herokuapp.com/donations/names/" + this.user_id, {
 
           })
           .subscribe(
