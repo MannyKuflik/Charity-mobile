@@ -15,12 +15,14 @@ import { sign, verify, decode} from 'jsonwebtoken';
 export class ProfilePage {
 
   public name: string;
+  public email: string;
   public token: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,menu: MenuController) {
     this.token = localStorage.getItem("TOKEN");
     var details = decode(this.token);
     this.name = (details as any).user.firstname + " " + (details as any).user.lastname;
+    this.email= (details as any).user.email;
     menu.enable(true);
   }
 
