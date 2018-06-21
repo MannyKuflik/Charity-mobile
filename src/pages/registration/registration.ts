@@ -30,6 +30,8 @@ export class RegistrationPage {
     else {
       if (this.password == this.cpassword) {
         if (this.email.includes("@") && this.email.includes(".")) {
+          this.firstname = this.firstname.charAt(0).toUpperCase() + this.firstname.slice(1);
+          this.lastname = this.lastname.charAt(0).toUpperCase() + this.lastname.slice(1);
           this.http
             .post(this.authService.getBaseUrl() + "/registration", {
               firstname: this.firstname,

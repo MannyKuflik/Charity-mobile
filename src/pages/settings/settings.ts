@@ -25,6 +25,8 @@ export class SettingsPage {
   lastname: string;
   email: string;
   password: string;
+  npassword: string;
+  cpassword: string;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
@@ -35,7 +37,9 @@ export class SettingsPage {
     this.firstname = (details as any).user.firstname;
     this.lastname = (details as any).user.lastname;
     this.email = (details as any).user.email;
-    this.password = (details as any).user.password;
+    this.password = "";
+    this.npassword = "";
+    this.cpassword = "";
   }
 
   ionViewDidLoad() {
@@ -43,25 +47,33 @@ export class SettingsPage {
   }
 
   update() {
+    if (this.npassword == this.cpassword) {
     this.http
     .put(this.authService.getBaseUrl() + "/users/settings", {
-      id: this.userid,
-      firstname: this.firstname,
-      lastname: this.lastname,
-      email: this.email,
-      password: this.password,
+      user: {
+        id: this.userid,
+        firstname: this.firstname,
+        lastname: this.lastname,
+        email: this.email,
+        password: this.password,
+      },
+      npassword: this.npassword,
     })
     .subscribe(
       result => {
         var UserToken = result.json();
         localStorage.clear();
-        localStorage.setItem("Token", UserToken.token);
-        this.navCtrl.push(ProfilePage);
+        localStorage.setItem("TOKEN", UserToken.token);
+        this.navCtrl.setRoot(ProfilePage);
       },
       error => {
         console.log(error);
       }
     );
   }
+  else {
+    alert("New passwords do not match!")
+  }
+}
 
 }
