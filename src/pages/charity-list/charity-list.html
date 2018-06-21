@@ -17,8 +17,10 @@
             <ion-thumbnail item-start>
                 <img src={{charity.logoUrl}}>
             </ion-thumbnail>
-            <h2> {{charity.name}} </h2>
-            <button ion-button clear (click)="navigateToCharity(charity)" item-end>View</button>
+            <div item-content style="width: 100%">
+                <h2 style="text-align: center; font-weight: bold"> {{charity.name}} </h2>
+                <button ion-button clear (click)="navigateToCharity(charity)" item-end>View</button>
+            </div>
         </ion-item>
     </ion-list>
 </ion-content>
