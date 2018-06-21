@@ -19,6 +19,7 @@ export class CharityListPage {
     charity1.description = "Save the Rhinos!";
     charity1.link="www.savetherhinos.com";
     charity1.logoUrl = "https://upload.wikimedia.org/wikipedia/commons/6/63/Diceros_bicornis.jpg";
+    // charity1.photo = "assets/imgs/rhino.png";
 
     var charity2 = new Charity();
     charity2.id = 2;
@@ -26,6 +27,7 @@ export class CharityListPage {
     charity2.description = "Save the dogs!";
     charity2.link="www.savethedogs.com";
     charity2.logoUrl = "https://upload.wikimedia.org/wikipedia/commons/b/ba/African_wild_dog_%28Lycaon_pictus_pictus%29.jpg";
+    // charity2.photo = "assets/imgs/dog.jpg";
 
     var charity3 = new Charity();
     charity3.id = 3;
@@ -33,6 +35,7 @@ export class CharityListPage {
     charity3.description = "Save the elephants!";
     charity3.link="www.savetheelephants.com";
     charity3.logoUrl = "https://img.washingtonpost.com/wp-apps/imrs.php?src=https://img.washingtonpost.com/rf/image_960w/2010-2019/WashingtonPost/2015/10/08/Production/Health/Images/03902456-UZVE.jpg&w=1484";
+    // charity3.photo = "assets/imgs/elephant.jpg";
 
     var charity4 = new Charity();
     charity4.id = 4;
@@ -40,6 +43,7 @@ export class CharityListPage {
     charity4.description = "Save the lions!";
     charity4.link="www.savethelions.com";
     charity4.logoUrl = "https://cdn.images.express.co.uk/img/dynamic/galleries/x701/67639.jpg";
+    // charity4.photo = "lion.png";
 
     this.charities.push(charity1);
     this.charities.push(charity2);
