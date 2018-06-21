@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { decode} from 'jsonwebtoken';
 import { ProfilePage } from '../profile/profile';
 import { Http } from "@angular/http";
+import { AuthServ } from '../../authserv';
 
 
 /**
@@ -27,7 +28,7 @@ export class SettingsPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-  public http: Http) {
+  public http: Http, public authService: AuthServ) {
     this.token = localStorage.getItem("TOKEN");
     var details = decode(this.token);
     this.userid = (details as any).user.id;
@@ -43,7 +44,7 @@ export class SettingsPage {
 
   update() {
     this.http
-    .put("https://full-smacked-api.herokuapp.com/users/settings", {
+    .put(this.authService.getBaseUrl() + "/users/settings", {
       id: this.userid,
       firstname: this.firstname,
       lastname: this.lastname,

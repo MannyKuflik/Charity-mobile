@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { NavController, NavParams } from "ionic-angular";
 import { LoginPage } from "../login/login";
 import { Http } from "@angular/http";
+import { AuthServ } from '../../authserv';
 
 @Component({
   selector: "page-registration",
@@ -14,7 +15,7 @@ export class RegistrationPage {
   public email: string;
   public password: string;
   cpassword: string;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) { }
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, public authService: AuthServ) { }
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad LoginPage");
@@ -30,7 +31,7 @@ export class RegistrationPage {
       if (this.password == this.cpassword) {
         if (this.email.includes("@") && this.email.includes(".")) {
           this.http
-            .post("https://full-smacked-api.herokuapp.com/registration", {
+            .post(this.authService.getBaseUrl() + "/registration", {
               firstname: this.firstname,
               lastname: this.lastname,
               email: this.email,

@@ -4,6 +4,7 @@ import { ProfilePage } from '../profile/profile';
 import { Chart } from 'chart.js';
 import { Http } from "@angular/http";
 import { decode } from 'jsonwebtoken';
+import { AuthServ } from '../../authserv';
 
 @Component({
   selector: 'page-portfolio',
@@ -23,7 +24,7 @@ export class PortfolioPage {
   clist: string = "WWF, Turtles, Help Papi ";
 
 
-  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams, public authService: AuthServ) {
     this.token = localStorage.getItem("TOKEN");
     var details = decode(this.token);
     this.user_id = (details as any).user.id;
@@ -62,7 +63,7 @@ export class PortfolioPage {
 
       {
         this.http
-          .get("https://full-smacked-api.herokuapp.com/donations/" + this.user_id, {
+          .get(this.authService.getBaseUrl() + "/donations/" + this.user_id, {
 
           })
           .subscribe(
@@ -77,7 +78,7 @@ export class PortfolioPage {
       }
       {
         this.http
-          .get("https://full-smacked-api.herokuapp.com/donations/" + this.user_id, {
+          .get(this.authService.getBaseUrl() + "/donations/" + this.user_id, {
 
           })
           .subscribe(
@@ -92,7 +93,7 @@ export class PortfolioPage {
       }
       {
         this.http
-          .get("https://full-smacked-api.herokuapp.com/donations/money/" + this.user_id, {
+          .get(this.authService.getBaseUrl() + "/donations/money/" + this.user_id, {
 
           })
 
@@ -109,7 +110,7 @@ export class PortfolioPage {
       }
       {
         this.http
-          .get("https://full-smacked-api.herokuapp.com/donations/num/" + this.user_id, {
+          .get(this.authService.getBaseUrl() + "/donations/num/" + this.user_id, {
 
           })
           .subscribe(
@@ -124,7 +125,7 @@ export class PortfolioPage {
       }
       {
         this.http
-          .get("https://full-smacked-api.herokuapp.com/donations/names/" + this.user_id, {
+          .get(this.authService.getBaseUrl() + "/donations/names/" + this.user_id, {
 
           })
           .subscribe(

@@ -9,9 +9,14 @@ export class AuthServ {
 
     }
 
+    getBaseUrl() {
+        return "http://localhost:3000";
+        //return "https://full-smacked-api.herokuapp.com";
+    }
+
     login(email: string, password: string, callback: Function) {
         this.http
-            .post("https://full-smacked-api.herokuapp.com/login", {
+            .post(this.getBaseUrl() + "/login", {
                 email: email,
                 password: password
             })

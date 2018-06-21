@@ -8,6 +8,7 @@ import { ProfilePage } from '../profile/profile';
 import { PortfolioPage } from '../portfolio/portfolio';
 import { Http } from "@angular/http";
 import { decode } from 'jsonwebtoken';
+import { AuthServ } from '../../authserv';
 
 declare var Stripe;
 
@@ -29,7 +30,7 @@ export class DonationsPage {
   charity_id: number;
   charity_name: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, public authService: AuthServ) {
     this.token = localStorage.getItem("TOKEN");
     var details = decode(this.token);
     this.user_id = (details as any).user.id
@@ -113,7 +114,7 @@ export class DonationsPage {
 
         {
           this.http
-            .post("https://full-smacked-api.herokuapp.com/donations", {
+            .post(this.authService.getBaseUrl() + "/donations", {
               amount: this.amount,
               user_id: this.user_id,
               charity_id: this.charity_id,
