@@ -5,7 +5,7 @@
                 <ion-icon name="menu"></ion-icon>
             </button>
         </ion-buttons>
-        <ion-title>
+        <ion-title style= "font-weight: bold">
             Browse Charities
         </ion-title>
     </ion-navbar>
@@ -19,7 +19,7 @@
             </ion-thumbnail>
             <div item-content style="width: 100%">
                 <h2 style="text-align: center; font-weight: bold; color: snow"> {{charity.name}} </h2>
-                <button ion-button clear (click)="navigateToCharity(charity)" item-end>View</button>
+                <button ion-button color=black (click)="navigateToCharity(charity)" item-end>View</button>
             </div>
         </ion-item>
     </ion-list>
