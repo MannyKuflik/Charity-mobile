@@ -7,15 +7,15 @@
   </ion-navbar>
 </ion-header> -->
 
-<ion-content>
+<ion-content text-center class="vertical-align-content">
   <!-- <h1 style="font-size: 50px; text-align: center; font-family: Gill Sans">Donation Safari</h1> -->
   <!-- <ion-avatar item-start align="center"> -->
-    
+
   <!-- </ion-avatar> -->
   <!-- <img src="http://www.scusd.edu/sites/main/files/imagecache/lightbox/main-images/hands.jpg" class="responsive"> -->
-  <!-- <ion-grid>
+  <ion-grid>
     <ion-row>
-      <ion-col col-40> -->
+      <ion-col col-40>
         <!-- <h1 style="font-size: 40px; margin: 0; font-family: Gill Sans">Collectible.</h1>
         <h1 style="font-size: 40px; margin: 0; font-family: Gill Sans">Breedable.</h1>
         <h1 style="font-size: 40px; margin: 0; font-family: Gill Sans">Charitable.</h1> -->
@@ -25,9 +25,12 @@
         <br>
         <img src="assets/imgs/donationsafari.png" class="center">
         <br>
-      <!-- </ion-col>
+        <button ion-button full (click)="navigateToLogin()">Login</button>
+        <br>
+        <a ion-button full (click)="navigateToRegistration()">Register</a>
+      </ion-col>
     </ion-row>
-  </ion-grid> -->
+  </ion-grid>
   <!-- <ion-item-divider style="background-color: tomato"></ion-item-divider>
   <ion-item-divider style="background-color: gold"></ion-item-divider>
   <ion-item-divider style="background-color: lightgreen"></ion-item-divider>
@@ -43,7 +46,5 @@
     Welcome to CryptoSafari! We are an online donation platform that raises money for wildlife conservation. Please consider
     donating to one or more of our many amazing charity partners!
   </p> -->
-  <button ion-button full (click)="navigateToLogin()">Login</button>
-  <br>
-  <a ion-button full (click)="navigateToRegistration()">Register</a>
+
 </ion-content>
