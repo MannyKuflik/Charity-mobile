@@ -24,4 +24,17 @@ page-stripe-java-script {
       .StripeElement--webkit-autofill {
         background-color: #fefde5 !important;
       }
+      .button {
+        margin: 0 auto;
+        display: block;
+        background-color: white;
+        color: rgb(0, 119, 255);
+        border: 1px solid rgb(0, 110, 255);
+        width: 100%;
+        border-radius: 12px;
+        font-size: 16px;
+    }
+    .title {
+      text-align: left;
+  }
 }

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
 import { HomePage } from '../pages/home/home';
 import { SettingsPage } from '../pages/settings/settings';
 import { MenuPage } from '../pages/menu/menu';
@@ -11,7 +10,7 @@ import { MenuPage } from '../pages/menu/menu';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = null;
 
   constructor(platform: Platform, statusBar: StatusBar, 
     splashScreen: SplashScreen) {
@@ -20,6 +19,12 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
+
+      if (/* TODO: verified token */ localStorage.getItem("TOKEN")) {
+        this.rootPage = MenuPage;
+      } else {
+        this.rootPage = HomePage;
+      }
     });
   }
 
