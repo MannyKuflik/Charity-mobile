@@ -15,11 +15,11 @@
 <ion-content align="center" padding>
   <img align="center" height="75" width="75" src={{charity.logoUrl}}>
   <h1 align="center">
-    <b style="font-size: 40px">
+    <b style="font-size: 40px; font-family:Geneva">
       <u>{{charity.name}}</u>
     </b>
   </h1>
-  <a style="font-style: italic; font-size: 15px; color: black" href={{charity.link}}> {{charity.link}}</a>
+  <a style="font-style: italic; font-size: 15px; color: black; font-family:Geneva" href={{charity.link}}> {{charity.link}}</a>
   <ion-slides pager>
     <ion-slide>
       <img style="width:100%" src={{charity.photo1}}>
@@ -32,8 +32,8 @@
     </ion-slide>
   </ion-slides>
   <!-- <section style="background-color: rgba(255, 115, 0, 0.767)"> -->
-  <h3 align="left">Details</h3>
-  <p>{{charity.description}}</p>
+  <h3 align="left" style="font-family:Geneva">Details</h3>
+  <p style="font-family:Geneva">{{charity.description}}</p>
   <!-- </section> -->
 </ion-content>
 
