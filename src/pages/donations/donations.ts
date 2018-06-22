@@ -9,6 +9,7 @@ import { PortfolioPage } from '../portfolio/portfolio';
 import { Http } from "@angular/http";
 import { decode } from 'jsonwebtoken';
 import { AuthServ } from '../../authserv';
+import { MenuPage } from '../menu/menu';
 
 declare var Stripe;
 
@@ -129,7 +130,7 @@ export class DonationsPage {
               }
             );
         }
-        this.navCtrl.setRoot(PortfolioPage);
+        this.navCtrl.setRoot(MenuPage);
       }
 
     });
