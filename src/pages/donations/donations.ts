@@ -129,7 +129,7 @@ export class DonationsPage {
               }
             );
         }
-        this.navCtrl.push(PortfolioPage, { amount: this.amount, charity_name: this.charity_name});
+        this.navCtrl.setRoot(PortfolioPage);
       }
 
     });

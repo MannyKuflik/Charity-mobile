@@ -7,8 +7,8 @@
       </button>
     </ion-buttons>
     <ion-buttons right>
-        <img alt="logo" height="40" right src="assets/imgs/donationsafari.png">
-      </ion-buttons>
+      <img alt="logo" height="40" right src="assets/imgs/donationsafari.png">
+    </ion-buttons>
     <ion-title> Conservation Portfolio </ion-title>
   </ion-navbar>
 
@@ -19,19 +19,55 @@
   <h1>{{message}}</h1>
   <canvas #doughnutCanvas></canvas>
   <ion-list>
-    <button (click)="profileSend()"> View Profile</button>
+    <button (click)="profileSend()" style="background-color: dodgerblue; color: snow"> View Profile</button>
     <p> Raised for Conservation:
       <b> {{ total }} </b>
     </p>
     <p> Total Conservation Projects:
-      <b> {{ num }} </b>
+      <b> {{ numchar }} </b>
     </p>
     <p> Conservation Projects:
-      <b> {{ clist }} </b>
+      <b *ngFor="let string of chars"> {{ string }}, </b>
     </p>
   </ion-list>
-  <ion-item-divider style="background-color: azure"> Donation History </ion-item-divider>
+  <button ion-button padding (click)="updater()">update chart</button>
+  <br>
+  <ion-item-divider padding style="background-color: peru; color: mintcream" align="center">
+    <h1>
+      <b>Donation History</b>
+    </h1>
+  </ion-item-divider>
   <section>
-    <p>{{ chars }}</p>
+    <ion-grid align="center">
+      <ion-row style="background-color: peachpuff">
+        <ion-col>
+          <div>
+            <h6>Charity Name</h6>
+          </div>
+
+        </ion-col>
+        <ion-col>
+          <div>
+            <h6>Amount Donated</h6>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item *ngFor="let string of chars">
+            <div item-content style="width: 100%">
+              <h4 style="text-align: center; font-weight: bold; color: gray"> {{string}} </h4>
+            </div>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item *ngFor="let number of amnts">
+            <div item-content style="width: 100%">
+              <h4 style="text-align: center; font-weight: bold; color: gray"> {{number}} </h4>
+            </div>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </section>
 </ion-content>

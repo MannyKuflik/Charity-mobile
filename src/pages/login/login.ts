@@ -22,15 +22,15 @@ export class LoginPage {
   }
 
   login() {
-    this.http
-      .post(this.authService.getBaseUrl() + "/login", {
-        email: this.email,
-        password: this.password
-      })
-      .subscribe(
-        result => {
-          var UserToken = result.json();
-          localStorage.setItem("Token", UserToken.token);
+    // this.http
+    //   .post(this.authService.getBaseUrl() + "/login", {
+    //     email: this.email,
+    //     password: this.password
+    //   })
+    //   .subscribe(
+    //     result => {
+    //       var UserToken = result.json();
+    //       localStorage.setItem("Token", UserToken.token);
           // this.navCtrl.setRoot(MenuPage);
           // this.navCtrl.popToRoot();
     //       console.log(result.json().firstname);
@@ -47,8 +47,8 @@ export class LoginPage {
 
     //     error => {
     //       console.log(error);
-        }
-      );
+    //     }
+    //   );
     let cb = (err) => {
       if (err) {
         return;
