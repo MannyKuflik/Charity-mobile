@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Charity } from '../../models/charity';
 import { DonationsPage } from "../donations/donations";
+import { ProfilePage } from '../profile/profile';
 @Component({
   selector: 'page-charity-profile',
   templateUrl: 'charity-profile.html',
@@ -20,5 +21,9 @@ export class CharityProfilePage {
 
   navToDonations() {
     this.navCtrl.push(DonationsPage, {charity_id: this.charity.id, charity_name: this.charity.name});
-  }  
+  } 
+  
+  navigateToProfile() {
+    this.navCtrl.push(ProfilePage);
+  }
 }

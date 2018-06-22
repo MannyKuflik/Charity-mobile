@@ -7,8 +7,10 @@
       </button>
     </ion-buttons>
     <ion-buttons right>
+      <button ion-button (click)="navigateToProfile()">
         <img alt="logo" height="40" right src="assets/imgs/donationsafari.png">
-      </ion-buttons>
+      </button>
+    </ion-buttons>
     <ion-title>Settings</ion-title>
   </ion-navbar>
 
@@ -32,17 +34,17 @@
       <ion-input [(ngModel)]="email"></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label stacked> Old Password</ion-label>
-        <ion-input type="password" [(ngModel)]="password"></ion-input>
-      </ion-item>
+      <ion-label stacked> Old Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
     <ion-item>
       <ion-label stacked> Change Password</ion-label>
       <ion-input type="password" [(ngModel)]="npassword"></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label stacked> Confirm Changed Password</ion-label>
-        <ion-input type="password" [(ngModel)]="cpassword"></ion-input>
-      </ion-item>
+      <ion-label stacked> Confirm Changed Password</ion-label>
+      <ion-input type="password" [(ngModel)]="cpassword"></ion-input>
+    </ion-item>
   </ion-list>
 
   <button ion-button full (click)="update()">Save Changes</button>
